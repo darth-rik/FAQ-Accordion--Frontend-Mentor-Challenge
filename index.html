@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<img class="box-img" src="images/illustration-box-desktop.svg" alt="">
+  <div class="container">
+    <div class="left__illustration">
+      
+      <div class="img__container">
+        <img class= "bg-img"src="images/bg-pattern-desktop.svg" alt="">
+        <img class="first-image"src="images/illustration-woman-online-desktop.svg" alt="">
+        
+      </div>
+
+      
+    </div>
+    <div class="right__info">
+      <div class="text">
+<div class="faq-header">
+  <h2>
+    faq
+  </h2>
+</div>
+<div class="questions">
+  <p class="question--tab">
+    How many team members can I invite?
+  </p>
+  <img class="img-1" src="images/icon-arrow-down.svg" alt="">
+  </div>
+  <div class="answers operation operation-1" >
+    <p>
+      You can invite up to 2 additional users on the Free plan. There is no limit on
+      team members for the Premium plan.
+    
+    </p>
+  </div>
+  <hr>
+  <div class="questions">
+    <p class="question--tab>
+    What is the maximum file upload size?
+    </p>
+    <img class="img-2"  src="images/icon-arrow-down.svg" alt="">
+  </div>
+  <div class="answers operation operation-2">
+    <p>
+      No more than 2GB. All files in your account must fit your allotted storage space.
+  
+    </p>
+  </div>
+  <hr>
+  <div class="questions">
+    <p class="question--tab>
+    How do I reset my password?
+    </p>
+    <img class="img-3" src="images/icon-arrow-down.svg" alt="">
+  </div>
+  <div class="answers operation operation-3">
+    <p>
+      Click “Forgot password” from the login page or “Change password” from your profile page.
+      A reset link will be emailed to you.
+  
+    </p>
+  </div>
+  <hr>
+  <div class="questions">
+    <p class="question--tab>
+    Can I cancel my subscription?
+    </p>
+    <img class="img-4" src="images/icon-arrow-down.svg" alt="">
+  </div>
+  <div class="answers operation operation-4">
+    <p>
+      Yes! Send us a message and we’ll process your request no questions asked.
+  
+    </p>
+  </div>
+  <hr>
+  <div class="questions">
+    <p class="question--tab ">
+      Do you provide additional support?
+    </p>
+    <img class="img-5" src="images/icon-arrow-down.svg" alt="">
+  </div>
+  <div class="answers operation operation-5">
+    <p>
+      Chat and email support is available 24/7. Phone lines are open during normal business hours.
+  
+    </p>
+  </div>
+  <hr>
+ 
+
+      </div>
+      
+    </div>
+  </div>
+  <!-- How many team members can I invite?
+  You can invite up to 2 additional users on the Free plan. There is no limit on 
+  team members for the Premium plan.
+
+  What is the maximum file upload size?
+  No more than 2GB. All files in your account must fit your allotted storage space.
+
+  How do I reset my password?
+  Click “Forgot password” from the login page or “Change password” from your profile page.
+  A reset link will be emailed to you.
+
+  Can I cancel my subscription?
+  Yes! Send us a message and we’ll process your request no questions asked.
+
+  Do you provide additional support?
+  Chat and email support is available 24/7. Phone lines are open during normal business hours. -->
+
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. 
+  </footer> -->
+<script>
+ var questions= document.querySelectorAll(".question--tab")
+ var answers= document.querySelectorAll(".answers")
+
+
+  document.querySelectorAll(".questions").forEach(function(items){
+    items.addEventListener("click", function(e){
+     
+      if (!e.target.closest("p") && !e.target.closest("img")) {
+        return
+      } 
+       
+      var clicked= (this.children[0])
+      var image= this.children[1]
+      
+     
+      
+    
+       if (this.nextElementSibling.display==="block") {
+        this.nextElementSibling.display = "none"
+
+      } else {
+        this.nextElementSibling.display = "block"
+      }
+      if(this.nextElementSibling.style.maxHeight){
+       this.nextElementSibling.style.maxHeight = null 
+      } else{
+        this.nextElementSibling.style.maxHeight = this.nextElementSibling.scrollHeight + "px"
+      }
+
+    if( image.style.transform==="rotate(180deg)" ){
+     
+        image.style.transform = "rotate(0deg)"
+
+      } else {
+        image.style.transform="rotate(180deg)"
+      }
+
+     clicked.classList.toggle("question--tab-active")
+      clicked.classList.toggle("nohover")
+      
+    
+      
+    
+  })
+  })
+
+  
+</script>
+</body>
+</html>
